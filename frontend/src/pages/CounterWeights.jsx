@@ -1,0 +1,61 @@
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import FetchProducts from "../services/ProductPage/FetchProducts";
+
+function CounterWeights() {
+  const [products, setProducts] = useState([]);
+
+  async function fetchAllProducts() {
+    try {
+      const get = await FetchProducts();
+      console.log("product", get.getall);
+      setProducts(get.getall.filter((item) => item.typeofproduct === "Counter Weights"));
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    fetchAllProducts();
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-[60vh] w-full sm:py-6 px-2 py-2 sm:px-6 bg-gray-100">
+      {/* SEO Optimization */}
+      <Helmet>
+        <title>Counter Weights - High-Quality Precision Engineered Weights</title>
+        <meta name="description" content="Explore our premium collection of counter weights, engineered for precision and durability. Find the perfect weight solutions for your needs." />
+        <meta name="keywords" content="Counter Weights, Precision Weights, Durable Counterweights, Engineering Weights, Industrial Weights" />
+      </Helmet>
+
+      {/* Section Title */}
+      <div className="text-left lg:ml-14 mb-10">
+        <h1 className="text-lg md:text-2xl lg:text-4xl font-bold text-[#FD5D14] border-l-4 border-blue-700 pl-4 mb-6">
+          Counter Weights
+        </h1>
+      </div>
+
+      {/* Products Grid Section */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+        {products?.map((product, index) => (
+          <div
+            key={index}
+            className="relative hover:cursor-pointer space-y-2 bg-white rounded-lg overflow-hidden shadow-lg"
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-48 object-contain"
+            />
+            <div className="px-4 py-2 text-left">
+              <h2 className="text-md sm:text-lg text-slate-500">{product.title}</h2>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default CounterWeights;
