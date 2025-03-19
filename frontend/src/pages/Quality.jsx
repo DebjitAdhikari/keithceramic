@@ -94,7 +94,7 @@ function Quality() {
       </div>
       <div className="w-[90%] md:w-[80%] bg-white shadow-lg rounded-lg p-6 mb-10">
         <h2 className="font-semibold mb-4 text-center text-md sm:text-2xl text-[#FD5D14]">
-        SAND TESTING EQUIPMENT
+        Sand Testing Equipment
 
         </h2>
 

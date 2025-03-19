@@ -13,9 +13,9 @@ function AdminDashboard() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation(); // Get current route
-
+  const homeUrl="http://localhost:5173"
   function gotoHome() {
-    navigate("/");
+    window.location.href = homeUrl
   }
 
   return (

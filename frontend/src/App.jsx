@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -8,14 +13,23 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Infrastructure from "./pages/Infrastructure";
 import Quality from "./pages/Quality";
-import AdminDashboard from "./pages/AdminDashboard";
+import { useEffect } from "react";
+
+// External redirection component
+function ExternalRedirect() {
+  useEffect(() => {
+    window.location.href = "http://localhost:5174/";
+  }, []);
+
+  return null;
+}
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
-    <HelmetProvider> {/* ✅ Wrap inside HelmetProvider */}
+    <HelmetProvider>
       {!isAdminRoute && <NavBar />}
       <div className="overflow-x-hidden">
         <Routes>
@@ -25,7 +39,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/quality" element={<Quality />} />
-          <Route path="/admin/*" element={<AdminDashboard />} />
+          {/* Use ExternalRedirect Component for Admin Route */}
+          <Route path="/admin/*" element={<ExternalRedirect />} />
         </Routes>
       </div>
       {!isAdminRoute && <Footer />}

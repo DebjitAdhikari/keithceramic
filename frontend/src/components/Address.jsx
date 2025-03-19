@@ -9,7 +9,7 @@ function Address() {
                     {/* Image Section */}
                     <div className="w-full">
                       <img 
-                        src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                        src="assets/images/office.jpg"
                         alt="Office"
                         className="w-full h-48 object-cover"
                        />
@@ -50,7 +50,7 @@ function Address() {
                     {/* Image Section */}
                     <div className="w-full">
                       <img                       
-                        src="https://cdn.pixabay.com/photo/2016/11/05/21/49/industry-1801661_960_720.jpg" 
+                        src="assets/images/fact.png"
                         alt="Office"
                         className="w-full h-48 object-cover"
                        />
@@ -67,12 +67,14 @@ function Address() {
                         Factory
                       </h2>
                       <p className=" text-sm md:text-lg text-gray-600 leading-relaxed">
-                        PLOT NOS. 42 & 43,  <br></br>
-                        ULUBERIA INDUSTRIAL GROWTH CENTER
-                        BIRSHIBPUR,<br></br>
-                        HOWRAH - 711316
+                         Plot Nos. 42 & 43, <br></br>
+                         Uluberia Industrial Growth Center
+                         Birshibpur,<br></br>
+                        
+                        Howrah – 711316<br></br>
+                        West Bengal, India
                       </p>
-                      <button className="bg-orangeColor text-white px-3 py-2 mt-4 rounded-md">
+                      {/* <button className="bg-orangeColor text-white px-3 py-2 mt-4 rounded-md">
                         <a className="flex gap-1 items-center" href="https://maps.app.goo.gl/wKfDn1nsX4Px4uzt8">
                           <svg className="w-[24px] size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" >
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -81,7 +83,7 @@ function Address() {
                           
                           Find on map
                         </a>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   

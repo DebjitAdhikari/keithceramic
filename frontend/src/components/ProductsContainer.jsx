@@ -60,7 +60,7 @@ function ProductsContainer() {
               {/* Product Details */}
               <div className="p-4">
                 <h3 className="font-bold  text-xl text-[#02245B] ">
-                  {item?.typeofproduct?.toUpperCase()}
+                  {item?.typeofproduct}
                 </h3>
                 {/* <p className="text-gray-600 text-sm mt-2">
                   {item.description?.slice(0, 60)}...
